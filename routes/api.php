@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('reports/', [ReportController::class, 'index'])->name('reports.index');
 Route::get('reports/{id}', [ReportController::class, 'show'])->name('reports.show');
-Route::post('reports/', [ReportController::class, 'store'])->name('reports.store')->middleware('lowercase.trim');
-Route::put('reports/{id}', [ReportController::class, 'update'])->name('reports.update')->middleware('lowercase.trim');
+Route::post('reports/', [ReportController::class, 'store'])->name('reports.store')->middleware('lowercase');
+Route::put('reports/{id}', [ReportController::class, 'update'])->name('reports.update')->middleware('lowercase');
 Route::patch('reports/{id}', [ReportController::class, 'close'])->name('reports.close');

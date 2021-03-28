@@ -71,7 +71,7 @@ class ReportController extends Controller
     public function show($report_id)
     {
         $validated = Validator::make(array('id' => $report_id), [
-            'id' => 'required|integer|gt:0|exists:reports,report_id'
+            'id' => 'required|integer|gt:0'
         ]);
 
         if ($validated->fails()) {
@@ -120,7 +120,7 @@ class ReportController extends Controller
 
     public function update(Request $request, $report_id)
     {
-        $rules = array_merge(array('id' => 'required|integer|gt:0|exists:reports,report_id'), $this->rules_report, $this->rules_base, $this->rules_solution, $this->rules_solver, $this->rules_date);
+        $rules = array_merge(array('id' => 'required|integer|gt:0'), $this->rules_report, $this->rules_base, $this->rules_solution, $this->rules_solver, $this->rules_date);
 
         $validated = Validator::make(array_merge(array('id' => $report_id), $request->all()), $rules);
 
@@ -147,7 +147,7 @@ class ReportController extends Controller
 
     public function close($report_id)
     {
-        $validated = Validator::make(array('id' => $report_id), array('id' => 'required|integer|gt:0|exists:reports,report_id'));
+        $validated = Validator::make(array('id' => $report_id), array('id' => 'required|integer|gt:0'));
 
         if ($validated->fails()) {
             return response()->json(array(

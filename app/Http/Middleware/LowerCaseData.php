@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
-class LowerCaseTrimData
+class LowerCaseData
 {
     /**
      * Handle an incoming request.
