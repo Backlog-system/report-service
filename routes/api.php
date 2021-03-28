@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('reports/', [ReportController::class, 'index'])->name('reports.index');
+Route::get('reports/{id}', [ReportController::class, 'show'])->name('reports.show');
+Route::post('reports/', [ReportController::class, 'store'])->name('reports.store')->middleware('lowercase.trim');
+Route::put('reports/{id}', [ReportController::class, 'update'])->name('reports.update')->middleware('lowercase.trim');
+Route::patch('reports/{id}', [ReportController::class, 'close'])->name('reports.close');

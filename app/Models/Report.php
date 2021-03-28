@@ -23,21 +23,21 @@ class Report extends Model
 
     public function base()
     {
-        return $this->hasOne('App\Base');
+        return $this->hasOne(Base::class, 'report_id', 'report_id');
     }
 
     public function solution()
     {
-        return $this->hasOne('App\Solution');
+        return $this->hasOne(Solution::class, 'report_id', 'report_id');
     }
 
     public function solver()
     {
-        return $this->hasOne('App\Solver');
+        return $this->hasOne(Solver::class, 'report_id', 'report_id');
     }
 
     public function date()
     {
-        return $this->hasOne('App\Date');
+        return $this->hasOne(Date::class, 'report_id', 'report_id');
     }
 }

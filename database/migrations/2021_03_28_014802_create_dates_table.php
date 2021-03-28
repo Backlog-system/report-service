@@ -18,10 +18,10 @@ class CreateDatesTable extends Migration
             $table->integer('report_id')->unsigned();
             $table->date('estimated_begin');
             $table->date('estimated_end');
-            $table->date('reconsider_begin');
-            $table->date('reconsider_end');
-            $table->date('real_begin');
-            $table->date('real_end');
+            $table->date('reconsider_begin')->nullable();
+            $table->date('reconsider_end')->nullable();
+            $table->date('real_begin')->nullable();
+            $table->date('real_end')->nullable();
 
             $table->foreign('report_id')->references('report_id')->on('reports');
         });

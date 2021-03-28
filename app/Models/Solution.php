@@ -20,6 +20,6 @@ class Solution extends Model
 
     public function report()
     {
-        return $this->belongsTo('App\Report');
+        return $this->belongsTo(Report::class, 'report_id', 'report_id');
     }
 }

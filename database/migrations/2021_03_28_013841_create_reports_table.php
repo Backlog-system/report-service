@@ -19,7 +19,7 @@ class CreateReportsTable extends Migration
             $table->string('report_code');
             $table->enum('state', array('por asignar', 'en proceso', 'en calidad', 'cerrado'));
             $table->enum('type', array('incidencia', 'soporte'));
-            $table->text('observation');
+            $table->text('observation')->nullable();
             $table->date('report_date');
         });
     }
