@@ -115,7 +115,9 @@ class ReportController extends Controller
         Solver::create($data_solver);
         Date::create($data_date);
 
-        return Report::where('report_id', '=', $report['report_id'])->with(['base', 'solution', 'solver', 'date'])->firstOrFail();
+        $response = Report::where('report_id', '=', $report['report_id'])->with(['base', 'solution', 'solver', 'date'])->firstOrFail();
+
+        return response()->json($response, 201);
     }
 
     public function update(Request $request, $report_id)
