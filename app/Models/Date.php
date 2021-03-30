@@ -5,6 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Models\Date
+ *
+ * @property-read \App\Models\Report $report
+ * @method static \Database\Factories\DateFactory factory(...$parameters)
+ * @method static \Illuminate\Database\Eloquent\Builder|Date newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Date newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Date query()
+ * @mixin \Eloquent
+ */
 class Date extends Model
 {
     use HasFactory;

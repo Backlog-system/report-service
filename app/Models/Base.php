@@ -5,6 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Models\Base
+ *
+ * @property-read \App\Models\Report $report
+ * @method static \Database\Factories\BaseFactory factory(...$parameters)
+ * @method static \Illuminate\Database\Eloquent\Builder|Base newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Base newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Base query()
+ * @mixin \Eloquent
+ */
 class Base extends Model
 {
     use HasFactory;
